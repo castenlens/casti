@@ -1,0 +1,570 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+/* lato-regular - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/lato-v23-latin-regular.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
+         url('../fonts/lato-v23-latin-regular.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* lato-700 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/lato-v23-latin-700.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
+         url('../fonts/lato-v23-latin-700.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* lato-900 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 900;
+    src: url('../fonts/lato-v23-latin-900.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
+         url('../fonts/lato-v23-latin-900.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+
+  html {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Lato";
+    font-style: normal;
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: normal;
+    color: black;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+.wrapper {
+    max-width: 1060px;
+    margin: 0 auto;
+}
+
+.wrapper-full{
+    max-width: 1262px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 42px;
+    position: relative;
+    padding-bottom: 10px;
+
+}
+/*  .section-title::after для черточки, обязательно content: '', тк там должно быть все пусто*/
+.section-title::after {
+    display: block;
+    content: '';
+    width: 253px;
+    height: 3px;
+    background: #006DFE;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* header-style start */
+
+
+
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.header_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-top: 56px;    
+}
+
+.header-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.header-item {
+    margin-right: 82px;
+}
+
+.header-item:last-child {
+    margin-right: 0;
+}
+
+.header_link {
+    font-weight: 400;
+    font-size: 18px;
+    color: #ffff;
+    text-decoration: none;
+}
+
+.header_link:hover, .header-link:focus, .header-link:active {
+    opacity: 75%;
+}
+
+/* header-style end */
+
+
+/* intro-styles start */
+.intro {
+    min-height: 100vh;
+    background: url(/img/svg/intro_bg.jpg) no-repeat center;
+    background-size: cover;
+    padding-top: 263px;
+}
+
+.intro_title {
+    font-weight: 500;
+    font-size: 50px;
+    line-height: 60px;
+    color: white;
+    max-width: 619px;
+    margin-bottom: 22px;
+}
+
+.intro_subtitle {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    max-width: 546px;
+    margin-bottom: 59px;
+    color: white;
+}
+
+.search-form_info {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.search-form_field {
+    width: 297px;
+    background: transparent url(/img/svg/Oval.svg) no-repeat left 9px;
+    background-size: 20px;
+    border: 0;
+    border-bottom: 2px solid #BFC0C5;
+    margin-right: 60px;
+    padding-left: 43px;
+    padding-bottom: 22px;
+    font-weight: 500;
+    font-size: 18px;
+    color: white;
+}
+
+.search-form_field::placeholder {
+font-weight: 500;
+font-size: 18px;
+color: white;
+}
+
+.search-form_submit {
+    padding: 15px 39px;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 24px;
+    color: white;
+    background: #1B7DFF;
+    border: 0;
+}
+
+.search-form_submit:hover, .search-form_submit:focus .search-form_submit:active {
+    background: #17509a;
+
+}
+
+/* intro-styles end */
+
+
+/* benefits styles start */
+.benefits_wrap {
+    max-width: 1262px;
+    background-color: #ffff;
+    margin: 0 auto;
+    box-shadow: 0px 2px 20px rgba(21, 24, 36, 0.15993);
+    position: relative;
+}
+
+.benefits {
+    margin-bottom: 131px;
+}
+
+.benefits_cards {
+    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+    grid-column-gap: 55px;
+    padding: 0 100px;
+}
+
+.benefits_title {
+    font-family: 'Lato';
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 42px;
+    position: absolute;
+    padding: 93px 100px 88px 100px;
+    top: 0;
+    left: 0;
+    transform: translateY(-100%);
+    background-color: #ffff;
+    width: 100%;
+}
+
+.benefits_card {
+    grid-column: span 1;
+    margin-bottom: 112px;
+}
+
+.benefits_card-pic {
+    margin-bottom: 37px;
+    max-width: 66px;
+}
+
+.benefits_card-thumb {
+    display: block;
+}
+
+.benefits_cards-title {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 26px;
+}
+
+.benefits_card-desc {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 39px;
+}
+
+.benefits_card-more {
+    display: inline-block;
+    padding-right: 59px;
+    font-size: 16px;
+    line-height: 24px;
+    color: #006DFE; 
+    text-decoration: none;
+    background: url(/img/svg/Shape.png) no-repeat 95% center;
+    transition: .2s all;
+}
+
+.benefits_card-more:hover, .benefits_card-more:focus {
+    background: url(/img/svg/Shape.png) no-repeat right center;
+
+}
+/* benefits styles end */
+
+
+
+
+
+/* places styles start */
+/*  !!!!!!!!!!.places-title  для отступов, а section-title сверху для стиля*/
+.places {
+    margin-bottom: 131px;
+}
+
+
+.places_caption {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;   
+    margin-bottom: 36px;
+    
+}
+
+.places_view-all {
+    text-decoration: none;
+    color: #006DFE;
+    font-size: 16px;
+    line-height: 24px;
+    padding-right: 59px;
+    background: url(/img/svg/Shape.png) no-repeat right center;
+}
+
+/*  opacity: .45; -- уменьшение прозрачности при наведении*/
+.places_view-all:hover, .places_view-all:focus {
+    opacity: .45;
+}
+
+.places-title {
+    margin-right: 15px;
+}
+/* grid-gap: 10px;   - это отступы */
+.places_cards {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 10px;    
+}
+
+.places_card {
+    position: relative;
+    overflow: hidden;
+}
+
+.places_card::after {
+    display: block;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgba(21, 24, 36, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.places_card_size-lg {
+    grid-column: span 3;
+}
+
+.places_card-pic {
+    width: 100%;
+    transition: .15s all;
+}
+.places_card:hover  .places_card-pic{
+    transform:scale(1.05) ;
+}
+
+.places_card-pic_size-lg {
+    height: 354px;
+    object-fit: cover;
+} 
+
+.places_card-pic_size-sm{
+    height: 283px;
+    object-fit: cover;
+} 
+
+.places_card_size-sm {
+    grid-column: span 2;
+}
+.places_card-title {
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 60px;
+    color: #ffff;
+    z-index: 5;
+    position: absolute;
+    bottom: 27px;
+    left: 29px;
+}
+
+.places_card-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+/* places styles end */
+
+
+
+/* Tours styles start */
+
+.tours {
+    margin-bottom: 139px;
+}
+
+.tours_tour {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0 108px;
+    align-items: center;
+    margin-bottom: 77px;
+}
+
+.tour_info {
+    padding-left: 47px;
+
+}
+
+.tour_title {
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 40px;
+    margin-bottom: 85px;
+}
+
+.tour_desc {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 58px;
+}
+
+.tour_more {
+    text-decoration: none;
+    color: #006DFE;
+    font-size: 16px;
+    line-height: 24px;
+    padding-right: 59px;
+    background: url(/img/svg/Shape.png) no-repeat right center;
+}
+
+.tour_more:hover, .tour_more:focus {
+   opacity: .45;
+}
+/* Tours styles end */
+
+
+
+ /* Top styles start */
+
+ .top {
+    margin-bottom: 86px;
+
+ }
+
+ .top_title {
+    margin-bottom: 54px;
+ }
+
+ .top_card-stats {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    position: absolute;
+    justify-content: flex-end;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(21, 24, 36, 0.6);
+    padding: 16px 25px;
+ }
+
+.top_card-pic {
+    position: relative;
+    margin-bottom: 45px;
+}
+
+.top_card-pic:hover, .top_card-pic:active, .top_card-pic:focus {
+transform:scale(1.05)
+}
+
+.top_card-title {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: #ffff;
+    margin: 0 auto 0 0; 
+}
+
+.top_cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 57px;
+}
+
+.top_card {
+    display: flex;
+    flex-direction: column;
+}
+
+.top_card-likes {
+    color: #ffff;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    padding-right: 20px;
+    background: url(/img/svg/like-icon.svg) no-repeat right;
+    margin-right: 14px;
+}
+
+.top_card-comments {
+    color: #ffff;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    background: url(/img/svg/comment-icon.svg) no-repeat right;
+    padding-right: 23px;
+}
+
+.top_card-desc {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 31px;
+}
+
+.top_card-more {
+    padding: 12px 19px;
+    font-size: 16px;
+    color: white;
+    background: #1B7DFF;
+    text-decoration: none;
+    width: 118px;
+    margin: auto 0 0 0;
+}
+
+.top_card-more:hover, .top_card-more:active, .top_card-more:focus {
+    background-color: #17509a;
+}
+ /* Top styles end */
